@@ -1,79 +1,62 @@
-package Exercise1;
-
-import java.util.List;
-import java.util.ArrayList;
+package exercise1;
 import java.util.Random;
 import java.util.Scanner;
 
-
 /**
- * A class that fills a hand of 7 cards with random Card objects and then asks the user to pick a card.
- * It then searches the array of cards for the match to the user's card.
- * To be used as starting code in Exercise.
- *
- * @author dancye
- * @author Paul Bonenfant
- * @date Jan 25, 2022
+ * A class that fills a hand of 7 cards with random Card Objects and then asks the user to pick a card.
+ * It then searches the array of cards for the match to the user's card. 
+ * To be used as starting code in Exercise
  */
 public class CardTrick {
-
+    
     public static void main(String[] args) {
-       
-       
+        
+        Card[] hand = new Card[7];
 
         for (int i = 0; i < hand.length; i++) {
             Card card = new Card();
-            card.setValue(generateRandomNumber(1, 13));
-            card.setSuit(Card.SUITS[generateRandomNumber(0, 3)]);
+            Random random = new Random();
+            card.setValue(random.nextInt(13) + 1);
+            card.setSuit(random.nextInt(4));
             hand[i] = card;
         }
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter your card value (1-10, 11 for Jack, 12 for Queen, 13 for King): ");
+        
+        System.out.print("Enter the value of the card (1-13): ");
         int value = scanner.nextInt();
-        System.out.print("Enter your card suit (1 for Hearts, 2 for Diamonds, 3 for Clubs, 4 for Spades): ");
+        
+        System.out.print("Enter the suit of the card (0-3): ");
         int suit = scanner.nextInt();
-
+        
         Card userCard = new Card();
         userCard.setValue(value);
-        userCard.setSuit(Card.SUITS[suit - 1]);
-
-        boolean matchFound = false;
-
+        userCard.setSuit(suit);
+        
+        boolean found = false;
+        
         for (Card card : hand) {
             if (card.getValue() == userCard.getValue() && card.getSuit().equals(userCard.getSuit())) {
-                matchFound = true;
+                found = true;
                 break;
             }
         }
-
-        if (matchFound) {
+        
+        if (found) {
+            System.out.println("Congratulations, you guessed right!");
             printInfo();
         } else {
-            System.out.println("Sorry, no match found.");
+            System.out.println("Sorry, the card was not found.");
         }
     }
 
-    private static int generateRandomNumber(int min, int max) {
-        Random random = new Random();
-        return random.nextInt(max - min + 1) + min;
-    }
-
+    /**
+     * A simple method to print out personal information.
+     */
     private static void printInfo() {
-        System.out.println("Congratulations, you guessed right!");
         System.out.println();
-        System.out.println("My name is Mankirat Singh, but you can call me Mankirat");
-        System.out.println();
-        System.out.println("My career ambitions:");
-        System.out.println("-- Be more active on Social Media");
-        System.out.println("-- Being a Software Engineer");
-        System.out.println();
-        System.out.println("My hobbies:");
-        System.out.println("-- Playing Outdoor Games");
-        System.out.println("-- Driving");
-        System.out.println("-- Watching TV");
-        System.out.println("-- Gardening");
-        System.out.println();
+        System.out.println("My name is ChatGPT, an AI language model created by OpenAI.");
+        System.out.println("I can help you with a wide range of topics and tasks.");
+        System.out.println("Feel free to ask me anything!");
     }
 }
-
