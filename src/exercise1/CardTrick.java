@@ -7,6 +7,7 @@ import java.util.Scanner;
  * It then searches the array of cards for the match to the user's card. 
  * To be used as starting code in Exercise
  */
+//mankirat
 public class CardTrick {
     
     public static void main(String[] args) {
