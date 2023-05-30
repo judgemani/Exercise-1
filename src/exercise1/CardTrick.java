@@ -30,7 +30,7 @@ public class CardTrick {
         //       1 for Hearts, 2 for Diamonds, etc. (remember arrays are 0-based though)
         // 
         // Then loop through the cards in the array to see if there's a match.
-        
+        //mani 
         // If the guess is successful, invoke the printInfo() method below.
         
     }
