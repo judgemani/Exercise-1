@@ -54,9 +54,21 @@ public class CardTrick {
      * A simple method to print out personal information.
      */
     private static void printInfo() {
+        
+        System.out.println("My name is Mankirat");
         System.out.println();
-        System.out.println("My name is ChatGPT, an AI language model created by OpenAI.");
-        System.out.println("I can help you with a wide range of topics and tasks.");
-        System.out.println("Feel free to ask me anything!");
+        
+        System.out.println("My career ambitions:");
+        System.out.println("-- Be a programmer");
+ 
+        System.out.println();	
+
+        System.out.println("My hobbies:");
+        System.out.println("-- Travelling");
+        System.out.println("-- Playing");
+        System.out.println("-- Watching TV");
+        System.out.println("-- Reading  ");
+
+        System.out.println();
     }
 }
